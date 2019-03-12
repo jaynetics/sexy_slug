@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
 
   s.summary     = 'Builds slugs from Strings'
-  s.description = 'Build sexy slugs for your URL paths.'\
+  s.description = 'Build sexy slugs for your URL paths. '\
                   'A lightweight, opinionated alternative to StringEx/ActAsUrl.'
 
   s.authors     = ['Janosch Müller']
