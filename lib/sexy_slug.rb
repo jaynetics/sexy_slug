@@ -1,5 +1,6 @@
 require 'active_support/inflector/transliterate'
 require 'active_support/multibyte'
+require 'sexy_slug/i18n'
 Dir[File.join(__dir__, 'sexy_slug', '*.rb')].each { |file| require file }
 
 module SexySlug
