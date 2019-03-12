@@ -1,3 +1,6 @@
+[![Gem Version](https://badge.fury.io/rb/sexy_slug.svg)](http://badge.fury.io/rb/sexy_slug)
+[![Build Status](https://travis-ci.org/jaynetics/sexy_slug.svg?branch=master)](https://travis-ci.org/jaynetics/sexy_slug)
+
 # SexySlug
 
 This is a Ruby gem that builds [slugs](https://en.wikipedia.org/wiki/Clean_URL#Slug) from Strings.
@@ -12,7 +15,7 @@ These are the main things that SexySlug does differently:
 - does not transliterate non-latin scripts (*[why?](#why)*)
 - provides no ActiveRecord mixin
 - isn't configurable
-- is 5x faster (*[see benchmark](https://gist.github.com/jaynetics/b024ffa19ce28c731289bd880b492b0b)*)
+- is about five times faster (*[see benchmark](https://gist.github.com/jaynetics/b024ffa19ce28c731289bd880b492b0b)*)
 
 ## Installation
 
