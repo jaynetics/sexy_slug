@@ -23,7 +23,7 @@ These are the main things that SexySlug does differently:
 ```ruby
 SexySlug.from('Hi there!') # => 'hi-there'
 SexySlug.from('Mambo #5') # => 'mambo-number-five'
-I18n.with_locale(:de) { SexySlug.from('Mambo #5') } # => 'mambo-nummer-fünf'
+I18n.with_locale(:de) { SexySlug.from('Mambo #5') } # => 'mambo-nummer-fuenf'
 ```
 
 <a name='why'></a>
