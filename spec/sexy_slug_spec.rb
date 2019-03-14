@@ -115,6 +115,11 @@ RSpec.describe SexySlug do
     expect(:foo_bar).to become 'foo-bar'
   end
 
+  it 'does not mutate the input' do
+    input = 'Hi there!'
+    expect { SexySlug.from(input) }.not_to change { input }
+  end
+
   it 'translates logograms in German', locale: :de do
     expect('heute/morgen').to become 'heute-oder-morgen'
   end
