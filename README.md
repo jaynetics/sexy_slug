@@ -13,9 +13,9 @@ These are the main things that SexySlug does differently:
 - depends on activesupport
 - leaves core classes untouched
 - makes a few more transformations (*[see specs](https://github.com/jaynetics/sexy_slug/blob/master/spec/sexy_slug_spec.rb)*)
-- does not transliterate non-latin scripts (*[why?](#why)*)
+- does not transliterate non-latin scripts (*[why?](#transliterations)*)
 - provides no ActiveRecord mixin
-- isn't configurable
+- is less customizable
 - is about five times faster (*[see benchmark](https://gist.github.com/jaynetics/b024ffa19ce28c731289bd880b492b0b)*)
 
 ## Installation
@@ -30,14 +30,34 @@ SexySlug.from('Mambo #5') # => 'mambo-number-five'
 I18n.with_locale(:de) { SexySlug.from('Mambo #5') } # => 'mambo-nummer-fuenf'
 ```
 
-<a name='why'></a>
+<a name='customization'></a>
+### Customization
+
+Simply change the contents of the `SexySlug::PROCESSORS` Array.
+
+```ruby
+SexySlug::PROCESSORS.delete(SexySlug::UsuallyTransliterableChar)
+SexySlug::PROCESSORS.unshift(MyCustomProcessor)
+```
+
+<a name='transliterations'></a>
 ## Why no universal transliterations?
 
 Sluggification is always a fuzzy business, but transliteration in particular is almost guaranteed to produce incorrect results.
 
-In many languages, codepoints don't map one-to-one to pronunciations, so their correct transliteration is context-dependent. This means only ML can yield decent results.
+In many languages, codepoints don't map one-to-one to pronunciations, so their correct transliteration is context-dependent. Some relevant issues are e.g. [allophones](https://en.wikipedia.org/wiki/Allophone), [crasis](https://en.wikipedia.org/wiki/Crasis), [digraphs](https://de.wikipedia.org/wiki/Digraph), [sandhi](https://en.wikipedia.org/wiki/Sandhi), and shared scripts.
 
-Some relevant issues are e.g. [allophones](https://en.wikipedia.org/wiki/Allophone), [crasis](https://en.wikipedia.org/wiki/Crasis), [digraphs](https://de.wikipedia.org/wiki/Digraph), and [sandhi](https://en.wikipedia.org/wiki/Sandhi).
+Despite some restraint, `sexy_slug` isn't completely "i18n-proof", e.g.:
+- it might mistranslate money amounts, as the dollar sign is also used for non-dollar currencies
+- it always transliterates umlauts, which isn't appropriate for languages such as Turkish
+
+See [customization](#customization) on how to avoid this if needed.
+
+## Similar/related projects
+
+- [babosa](https://github.com/norman/babosa)
+- [friendly_id](https://github.com/norman/friendly_id)
+- [stringex](https://github.com/rsl/stringex)
 
 ## Contributing
 
