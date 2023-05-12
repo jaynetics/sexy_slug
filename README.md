@@ -1,6 +1,6 @@
 [![Gem Version](https://badge.fury.io/rb/sexy_slug.svg)](http://badge.fury.io/rb/sexy_slug)
 [![Build Status](https://github.com/jaynetics/sexy_slug/workflows/tests/badge.svg)](https://github.com/jaynetics/sexy_slug/actions)
-[![codecov](https://codecov.io/gh/jaynetics/sexy_slug/branch/master/graph/badge.svg)](https://codecov.io/gh/jaynetics/sexy_slug)
+[![codecov](https://codecov.io/gh/jaynetics/sexy_slug/branch/main/graph/badge.svg)](https://codecov.io/gh/jaynetics/sexy_slug)
 
 # SexySlug
 
