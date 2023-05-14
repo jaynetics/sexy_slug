@@ -4,6 +4,6 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'bundler', '~> 2.0'
-gem 'codecov', '~> 0.1'
 gem 'rake', '~> 12.0'
 gem 'rspec', '~> 3.0'
+gem 'simplecov-cobertura'

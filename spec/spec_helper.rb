@@ -1,9 +1,7 @@
 require 'simplecov'
+require 'simplecov-cobertura'
+SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
 SimpleCov.start
-
-ENV['CODECOV_TOKEN'] = '621d7cdb-3319-41b4-ad20-61674212437e'
-require 'codecov'
-SimpleCov.formatter = SimpleCov::Formatter::Codecov
 
 require 'bundler/setup'
 require 'sexy_slug'
